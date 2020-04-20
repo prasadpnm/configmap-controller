@@ -1,0 +1,56 @@
+
+---
+apiVersion: apiextensions.k8s.io/v1beta1
+kind: CustomResourceDefinition
+metadata:
+  annotations:
+    controller-gen.kubebuilder.io/version: v0.2.5
+  creationTimestamp: null
+  name: updateconfigs.customapp.prasad.com
+spec:
+  group: customapp.prasad.com
+  names:
+    kind: UpdateConfig
+    listKind: UpdateConfigList
+    plural: updateconfigs
+    singular: updateconfig
+  scope: Namespaced
+  validation:
+    openAPIV3Schema:
+      description: UpdateConfig is the Schema for the updateconfigs API
+      properties:
+        apiVersion:
+          description: 'APIVersion defines the versioned schema of this representation
+            of an object. Servers should convert recognized schemas to the latest
+            internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources'
+          type: string
+        kind:
+          description: 'Kind is a string value representing the REST resource this
+            object represents. Servers may infer this from the endpoint the client
+            submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+          type: string
+        metadata:
+          type: object
+        spec:
+          description: UpdateConfigSpec defines the desired state of UpdateConfig
+          properties:
+            updatedconfig:
+              description: This field can be used to define your presentation in markdown.
+                Use --- to separate slides.
+              type: string
+          type: object
+        status:
+          description: UpdateConfigStatus defines the observed state of UpdateConfig
+          type: object
+      type: object
+  version: v1
+  versions:
+  - name: v1
+    served: true
+    storage: true
+status:
+  acceptedNames:
+    kind: ""
+    plural: ""
+  conditions: []
+  storedVersions: []

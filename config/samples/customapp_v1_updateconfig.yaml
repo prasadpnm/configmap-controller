@@ -1,0 +1,9 @@
+apiVersion: customapp.prasad.com/v1
+kind: UpdateConfig
+metadata:
+  name: updateconfig-sample
+spec:
+  # Add fields here
+   updateconfig: |
+    maxmemory 5mb
+    maxmemory-policy allkeys-lru

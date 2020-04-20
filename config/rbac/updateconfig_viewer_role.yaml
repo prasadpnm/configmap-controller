@@ -1,0 +1,20 @@
+# permissions for end users to view updateconfigs.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: updateconfig-viewer-role
+rules:
+- apiGroups:
+  - customapp.prasad.com
+  resources:
+  - updateconfigs
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - customapp.prasad.com
+  resources:
+  - updateconfigs/status
+  verbs:
+  - get
