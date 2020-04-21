@@ -44,11 +44,15 @@ type UpdateConfigReconciler struct {
 func (r *UpdateConfigReconciler) Reconcile(req ctrl.Request) (ctrl.Result, error) {
 	// _ = context.Background()
 	// _ = r.Log.WithValues("updateconfig", req.NamespacedName)
-
 	// Fetch the Presentation instance
+
+	log := r.Log.WithValues("updateConfig", req.NamespacedName)
+	log.Info("******1")
 	instance := &customappv1.UpdateConfig{}
+	log.Info("******1:" + req.NamespacedName.String())
 	err := r.client.Get(context.TODO(), req.NamespacedName, instance)
 	if err != nil {
+		log.Error(err, "Failed to get the updatedConfiguration")
 		if errors.IsNotFound(err) {
 			// Request object not found, could have been deleted after reconcile request.
 			// Owned objects are automatically garbage collected. For additional cleanup logic use finalizers.

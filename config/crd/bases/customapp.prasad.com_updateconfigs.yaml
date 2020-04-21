@@ -34,7 +34,7 @@ spec:
         spec:
           description: UpdateConfigSpec defines the desired state of UpdateConfig
           properties:
-            updatedconfig:
+            updateconfig:
               description: This field can be used to define your presentation in markdown.
                 Use --- to separate slides.
               type: string

@@ -29,7 +29,7 @@ type UpdateConfigSpec struct {
 	// Important: Run "make" to regenerate code after modifying this file
 
 	// This field can be used to define your presentation in markdown. Use --- to separate slides.
-	Updatedconfig string `json:"updatedconfig,omitempty"`
+	Updateconfig string `json:"updateconfig,omitempty"`
 }
 
 // UpdateConfigStatus defines the observed state of UpdateConfig
